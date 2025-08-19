@@ -11,7 +11,7 @@ X = iris.data      # Features: measurements of petals & sepals
 y = iris.target    # Labels: flower species
 
 # 2. Split into training & testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
 
 # 3. Train a Random Forest model
 model = RandomForestClassifier(n_estimators=100, random_state=42)
@@ -26,4 +26,5 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 # 6. Try predicting a new sample
 sample = [[5.1, 3.5, 1.4, 0.2]]  # Sepal length, sepal width, petal length, petal width
 prediction = model.predict(sample)
+
 print("Predicted class:", iris.target_names[prediction][0])
